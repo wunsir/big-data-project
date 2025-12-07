@@ -83,3 +83,28 @@
 
 4.  **地理空间分析**：
     * 利用 folium 库绘制交互式地图，将薪资数据映射到地理坐标，直观展示高薪职位的空间集聚效应。
+
+## 项目文件结构
+
+### 核心分析脚本
+*   `智联招聘统计分析.ipynb` - 宏观分布与行业不平等分析
+*   `boss直聘分析.ipynb` - 技能溢价的微观计量研究
+
+### 数据采集模块
+
+**BOSS直聘爬虫** (`boss/`)
+*   `final_boss_crawl.ipynb` - 交互式爬虫（API逆向 + 详情页拼接）
+*   `joblist_1.xlsx`, `joblist_2.xlsx` - 爬取的职位原始数据
+*   `cookie.txt` - 会话管理文件
+*   `图1.png` - 网页解析示意图
+
+**智联招聘爬虫** (`zlzp/`)
+*   `zhilianzhaopin_spider.py` - 核心爬虫（Selenium+WebDriverWait）
+*   `算法爬取.py` - 反爬增强脚本（selenium-stealth + sensorsdata）
+*   **城市数据目录** - 按城市聚合的职位数据
+    *   `上海/`，`北京/`，`广州/`, `深圳/`, `杭州/`, `南京/` - 12 个岗位类别 × Excel 文件
+
+### 辅助文件
+*   `README.md` - 项目文档
+*   `temp.py` - 临时脚本
+*   `.gitignore` - Git 配置
