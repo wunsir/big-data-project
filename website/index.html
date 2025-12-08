@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>劳动力市场中技能溢价与薪酬决定机制研究</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-slate-50">
+
+    <!-- Navigation -->
+    <nav class="bg-slate-900 text-white shadow-lg sticky top-0 z-50">
+        <div class="max-width-container mx-auto px-6 py-4 flex justify-between items-center max-w-6xl">
+            <div class="font-serif text-xl font-bold tracking-wide">Labor Economics Research</div>
+            <div class="space-x-8 text-sm font-medium">
+                <a href="index.html" class="nav-link text-blue-300 border-b-2 border-blue-300 pb-1">项目概览</a>
+                <a href="macro.html" class="nav-link text-gray-300 hover:text-white">宏观分布分析</a>
+                <a href="micro.html" class="nav-link text-gray-300 hover:text-white">微观技能溢价</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-white border-b border-gray-200 py-16">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight">
+                劳动力市场中技能溢价与薪酬决定机制研究
+            </h1>
+            <p class="text-xl text-slate-600 font-serif italic">
+                —— 基于多源招聘平台数据的实证分析
+            </p>
+            <div class="mt-8 flex justify-center space-x-4 text-sm text-slate-500">
+                <span>数据源：智联招聘 & BOSS直聘</span>
+                <span>•</span>
+                <span>时间窗口：2025年12月</span>
+                <span>•</span>
+                <span>领域：金融与数据分析</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="academic-container">
+        
+        <!-- Abstract -->
+        <section class="mb-12 reveal">
+            <h2 class="text-2xl font-bold mb-4 border-b pb-2 border-slate-200">摘要 (Abstract)</h2>
+            <p class="text-justify text-slate-700 mb-4">
+                本项目采用“双平台对比 + 多维分析”的实证策略，旨在从宏观分布与微观机制两个层面全面解析劳动力市场的薪酬决定因素。通过对智联招聘和BOSS直聘的大规模数据采集，我们构建了包含宏观薪资分布图谱和微观技能标签的综合数据库。
+            </p>
+            <div class="highlight-box hover-scale">
+                <p class="font-medium text-slate-800">核心发现：</p>
+                <ul class="list-disc list-inside mt-2 space-y-1 text-slate-700">
+                    <li>宏观层面：一线城市与新一线城市存在显著的薪资梯队，特定行业（如量化、投行）表现出明显的“赢家通吃”特征。</li>
+                    <li>微观层面：在控制学历和经验后，技能相似度对薪资有显著的正向边际贡献，证实了“技能溢价”的存在。</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Methodology -->
+        <section class="mb-12 reveal">
+            <h2 class="text-2xl font-bold mb-4 border-b pb-2 border-slate-200">研究设计 (Research Design)</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-slate-50 p-6 rounded-lg border border-slate-200 hover-scale">
+                    <h3 class="text-lg font-bold mb-3 text-blue-900">智联招聘 (广度优先)</h3>
+                    <p class="text-sm text-slate-600 mb-2">利用其列表页信息密度高的特点，侧重于按城市进行大规模数据采集。</p>
+                    <ul class="list-disc list-inside text-sm text-slate-700 space-y-1">
+                        <li>构建宏观薪资分布图谱</li>
+                        <li>地理特征分析</li>
+                        <li>行业不平等度量 (基尼系数)</li>
+                    </ul>
+                </div>
+
+                <div class="bg-slate-50 p-6 rounded-lg border border-slate-200 hover-scale">
+                    <h3 class="text-lg font-bold mb-3 text-blue-900">BOSS直聘 (深度优先)</h3>
+                    <p class="text-sm text-slate-600 mb-2">深入采集包含详细职位描述（JD）和技能标签的微观数据。</p>
+                    <ul class="list-disc list-inside text-sm text-slate-700 space-y-1">
+                        <li>NLP 文本分析与向量化</li>
+                        <li>测度具体的“技能溢价”</li>
+                        <li>因果推断 (PSM, OLS)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation Cards -->
+        <section class="reveal">
+            <h2 class="text-2xl font-bold mb-6 border-b pb-2 border-slate-200">章节目录</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <a href="macro.html" class="group block p-6 border border-slate-200 rounded-lg hover:shadow-md transition bg-white hover-scale">
+                    <h3 class="text-xl font-bold text-slate-800 group-hover:text-blue-700 mb-2">Part 1: 宏观分布分析 &rarr;</h3>
+                    <p class="text-slate-600">基于智联招聘数据，分析城市薪资差异、岗位竞争力及行业不平等现象。</p>
+                </a>
+                <a href="micro.html" class="group block p-6 border border-slate-200 rounded-lg hover:shadow-md transition bg-white hover-scale">
+                    <h3 class="text-xl font-bold text-slate-800 group-hover:text-blue-700 mb-2">Part 2: 微观技能溢价 &rarr;</h3>
+                    <p class="text-slate-600">基于BOSS直聘数据，利用NLP和计量模型探究技能对薪资的边际贡献。</p>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-8 mt-12">
+        <div class="max-w-4xl mx-auto px-6 text-center text-sm">
+            <p>&copy; 2025 Big Data Project. All rights reserved.</p>
+            <p class="mt-2">Powered by Python, Selenium, Pandas, & Tailwind CSS.</p>
+        </div>
+    </footer>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>

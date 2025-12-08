@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>宏观分布分析 - 劳动力市场研究</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-slate-50">
+
+    <!-- Navigation -->
+    <nav class="bg-slate-900 text-white shadow-lg sticky top-0 z-50">
+        <div class="max-width-container mx-auto px-6 py-4 flex justify-between items-center max-w-6xl">
+            <div class="font-serif text-xl font-bold tracking-wide">Labor Economics Research</div>
+            <div class="space-x-8 text-sm font-medium">
+                <a href="index.html" class="nav-link text-gray-300 hover:text-white">项目概览</a>
+                <a href="macro.html" class="nav-link text-blue-300 border-b-2 border-blue-300 pb-1">宏观分布分析</a>
+                <a href="micro.html" class="nav-link text-gray-300 hover:text-white">微观技能溢价</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="academic-container">
+        <div class="mb-8 reveal">
+            <h1 class="text-3xl font-bold text-slate-900 mb-2">宏观分布分析</h1>
+            <p class="text-slate-600 font-serif italic">数据来源：智联招聘 (Zhaopin.com)</p>
+        </div>
+
+        <!-- Section 1: Geographic Distribution -->
+        <section class="mb-16 reveal">
+            <h2 class="text-2xl font-bold mb-6 border-l-4 border-blue-800 pl-4">1. 城市薪资与产业集聚</h2>
+            <p class="mb-6 text-slate-700">
+                我们首先分析了不同城市的薪资水平分布。通过热力图可以直观地看到，高薪岗位主要集中在北上广深等一线城市，且呈现出明显的产业集聚效应。
+            </p>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <figure class="flex flex-col">
+                    <img src="data/picture/zlzp城市岗位薪资热力图.png" alt="城市岗位薪资热力图" class="rounded shadow-sm border border-slate-200 hover:shadow-md transition duration-300">
+                    <figcaption class="figure-caption">图 1-1: 重点城市岗位薪资热力图分布</figcaption>
+                </figure>
+                <figure class="flex flex-col">
+                    <img src="data/picture/zlzp城市平均薪资对比.png" alt="城市平均薪资对比" class="rounded shadow-sm border border-slate-200 hover:shadow-md transition duration-300">
+                    <figcaption class="figure-caption">图 1-2: 各主要城市平均薪资对比柱状图</figcaption>
+                </figure>
+            </div>
+            <p class="text-sm text-slate-600 bg-slate-100 p-4 rounded">
+                <strong>分析：</strong> 一线城市（北京、上海、深圳）的平均薪资显著高于新一线城市（杭州、南京）。热力图进一步揭示了金融与科技行业在特定区域（如北京金融街、深圳南山）的高度集聚。
+            </p>
+        </section>
+
+        <!-- Section 2: Job Competitiveness -->
+        <section class="mb-16 reveal">
+            <h2 class="text-2xl font-bold mb-6 border-l-4 border-blue-800 pl-4">2. 岗位竞争力与学历门槛</h2>
+            <p class="mb-6 text-slate-700">
+                不同细分领域的薪资差异巨大，且对学历的要求各不相同。我们对比了量化、投行、数据分析等岗位的薪酬排名及学历构成。
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <figure class="flex flex-col">
+                    <img src="data/picture/zlzp岗位类型薪酬排名.png" alt="岗位类型薪酬排名" class="rounded shadow-sm border border-slate-200 hover:shadow-md transition duration-300">
+                    <figcaption class="figure-caption">图 2-1: 不同细分岗位类型的平均薪酬排名</figcaption>
+                </figure>
+                <figure class="flex flex-col">
+                    <img src="data/picture/zlzp城市学历要求构成.png" alt="城市学历要求构成" class="rounded shadow-sm border border-slate-200 hover:shadow-md transition duration-300">
+                    <figcaption class="figure-caption">图 2-2: 各城市招聘岗位的学历要求构成</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- Section 3: Inequality -->
+        <section class="mb-8 reveal">
+            <h2 class="text-2xl font-bold mb-6 border-l-4 border-blue-800 pl-4">3. 行业不平等度量</h2>
+            <p class="mb-6 text-slate-700">
+                利用洛伦兹曲线和基尼系数，我们测度了不同行业内部的收入分配差距。
+            </p>
+            
+            <div class="flex justify-center mb-8">
+                <figure class="w-full md:w-3/4">
+                    <img src="data/picture/zlzp薪资不平等洛伦兹曲线.png" alt="薪资不平等洛伦兹曲线" class="rounded shadow-sm border border-slate-200 hover:shadow-md transition duration-300">
+                    <figcaption class="figure-caption">图 3-1: 核心岗位类型的薪资不平等洛伦兹曲线</figcaption>
+                </figure>
+            </div>
+            <p class="text-sm text-slate-600 bg-slate-100 p-4 rounded">
+                <strong>结论：</strong> 曲线越弯曲，代表内部贫富差距越大。数据显示，金融类岗位（如量化、投行）的内部薪资差距显著大于通用型岗位（如数据分析），存在明显的“头部效应”。
+            </p>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-8 mt-12">
+        <div class="max-w-4xl mx-auto px-6 text-center text-sm">
+            <p>&copy; 2025 Big Data Project. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>

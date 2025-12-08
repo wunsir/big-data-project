@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>微观技能溢价分析 - 劳动力市场研究</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-slate-50">
+
+    <!-- Navigation -->
+    <nav class="bg-slate-900 text-white shadow-lg sticky top-0 z-50">
+        <div class="max-width-container mx-auto px-6 py-4 flex justify-between items-center max-w-6xl">
+            <div class="font-serif text-xl font-bold tracking-wide">Labor Economics Research</div>
+            <div class="space-x-8 text-sm font-medium">
+                <a href="index.html" class="nav-link text-gray-300 hover:text-white">项目概览</a>
+                <a href="macro.html" class="nav-link text-gray-300 hover:text-white">宏观分布分析</a>
+                <a href="micro.html" class="nav-link text-blue-300 border-b-2 border-blue-300 pb-1">微观技能溢价</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="academic-container">
+        <div class="mb-8 reveal">
+            <h1 class="text-3xl font-bold text-slate-900 mb-2">微观技能溢价分析</h1>
+            <p class="text-slate-600 font-serif italic">数据来源：BOSS直聘 (Zhipin.com)</p>
+        </div>
+
+        <!-- Section 1: NLP & Feature Engineering -->
+        <section class="mb-16 reveal">
+            <h2 class="text-2xl font-bold mb-6 border-l-4 border-blue-800 pl-4">1. NLP 技能解码与特征工程</h2>
+            <p class="mb-6 text-slate-700">
+                我们利用自然语言处理技术对职位描述（JD）进行深度解析。通过接入阿里通义千问 API (Qwen-Plus)，我们成功剔除了行政废话，提取了真正决定薪资的“硬技能”。
+            </p>
+            
+            <div class="grid md:grid-cols-3 gap-6 mb-8">
+                <figure class="flex flex-col">
+                    <img src="data/picture/boss岗位技能词云与统计.png" alt="岗位技能词云" class="rounded shadow-sm border border-slate-200 hover:shadow-md transition duration-300">
+                    <figcaption class="figure-caption">图 1-1: 岗位核心技能词云分布</figcaption>
+                </figure>
+                <figure class="flex flex-col">
+                    <img src="data/picture/boss高低薪岗位核心词汇对比.png" alt="高低薪岗位核心词汇对比" class="rounded shadow-sm border border-slate-200 hover:shadow-md transition duration-300">
+                    <figcaption class="figure-caption">图 1-2: 高低薪岗位核心词汇对比 (原始)</figcaption>
+                </figure>
+                <figure class="flex flex-col">
+                    <img src="data/picture/boss高低薪岗位核心词汇对比AI筛选.png" alt="高低薪岗位核心词汇对比AI筛选" class="rounded shadow-sm border border-slate-200 hover:shadow-md transition duration-300">
+                    <figcaption class="figure-caption">图 1-3: 高低薪岗位核心词汇对比 (AI筛选后)</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- Section 2: Salary Determinants -->
+        <section class="mb-16 reveal">
+            <h2 class="text-2xl font-bold mb-6 border-l-4 border-blue-800 pl-4">2. 薪资决定因素分析</h2>
+            <p class="mb-6 text-slate-700">
+                通过相关性热力图和特征重要性排序，我们探究了学历、经验、技能相似度等因素对薪资的影响权重。
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <figure class="flex flex-col">
+                    <img src="data/picture/boss薪资分布与学历经验分析.png" alt="薪资分布与学历经验分析" class="rounded shadow-sm border border-slate-200 hover:shadow-md transition duration-300">
+                    <figcaption class="figure-caption">图 2-1: 薪资分布与学历经验分析</figcaption>
+                </figure>
+                <figure class="flex flex-col">
+                    <img src="data/picture/boss薪资影响因素堆积分析.png" alt="薪资影响因素堆积分析" class="rounded shadow-sm border border-slate-200 hover:shadow-md transition duration-300">
+                    <figcaption class="figure-caption">图 2-2: 薪资影响因素堆积分析</figcaption>
+                </figure>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <figure class="flex flex-col">
+                    <img src="data/picture/boss薪资影响因素相关性热力图.png" alt="薪资影响因素相关性热力图" class="rounded shadow-sm border border-slate-200 hover:shadow-md transition duration-300">
+                    <figcaption class="figure-caption">图 2-3: 薪资影响因素皮尔逊相关性热力图</figcaption>
+                </figure>
+                <figure class="flex flex-col">
+                    <img src="data/picture/boss薪资影响因素重要性排序.png" alt="薪资影响因素重要性排序" class="rounded shadow-sm border border-slate-200 hover:shadow-md transition duration-300">
+                    <figcaption class="figure-caption">图 2-4: 基于随机森林模型的特征重要性排序</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- Section 3: Skill Premium -->
+        <section class="mb-16 reveal">
+            <h2 class="text-2xl font-bold mb-6 border-l-4 border-blue-800 pl-4">3. 技能溢价测度</h2>
+            <p class="mb-6 text-slate-700">
+                本研究的核心发现：职位描述（JD）与高薪原型的相似度越高，其提供的薪资溢价越显著。这验证了劳动力市场对特定技能组合的高回报。
+            </p>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <figure class="flex flex-col">
+                    <img src="data/picture/boss相似度分布直方图.png" alt="相似度分布直方图" class="rounded shadow-sm border border-slate-200 hover:shadow-md transition duration-300">
+                    <figcaption class="figure-caption">图 3-1: 技能相似度分布直方图</figcaption>
+                </figure>
+                <figure class="flex flex-col">
+                    <img src="data/picture/boss职位描述相似度与薪资关系.png" alt="职位描述相似度与薪资关系" class="rounded shadow-sm border border-slate-200 hover:shadow-md transition duration-300">
+                    <figcaption class="figure-caption">图 3-2: JD相似度与薪资的散点拟合关系</figcaption>
+                </figure>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <figure class="flex flex-col">
+                    <img src="data/picture/boss相似度等级与薪资关系.png" alt="相似度等级与薪资关系" class="rounded shadow-sm border border-slate-200 hover:shadow-md transition duration-300">
+                    <figcaption class="figure-caption">图 3-3: 不同相似度等级下的平均薪资差异</figcaption>
+                </figure>
+                <figure class="flex flex-col">
+                    <img src="data/picture/boss薪资分组相似度箱线图.png" alt="薪资分组相似度箱线图" class="rounded shadow-sm border border-slate-200 hover:shadow-md transition duration-300">
+                    <figcaption class="figure-caption">图 3-4: 不同薪资分组的相似度箱线图</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- Section 4: Heterogeneity Analysis -->
+        <section class="mb-16 reveal">
+            <h2 class="text-2xl font-bold mb-6 border-l-4 border-blue-800 pl-4">4. 异质性分析</h2>
+            <p class="mb-6 text-slate-700">
+                我们进一步探讨了技能溢价在不同学历、城市等级等维度上的差异。
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-6 mb-8">
+                <figure class="flex flex-col">
+                    <img src="data/picture/boss学历对技能溢价的调节作用.png" alt="学历对技能溢价的调节作用" class="rounded shadow-sm border border-slate-200 hover:shadow-md transition duration-300">
+                    <figcaption class="figure-caption">图 4-1: 学历对技能溢价的调节作用</figcaption>
+                </figure>
+                <figure class="flex flex-col">
+                    <img src="data/picture/boss城市等级技能回报率差异.png" alt="城市等级技能回报率差异" class="rounded shadow-sm border border-slate-200 hover:shadow-md transition duration-300">
+                    <figcaption class="figure-caption">图 4-2: 城市等级技能回报率差异</figcaption>
+                </figure>
+                <figure class="flex flex-col">
+                    <img src="data/picture/boss技能溢价异质性分析.png" alt="技能溢价异质性分析" class="rounded shadow-sm border border-slate-200 hover:shadow-md transition duration-300">
+                    <figcaption class="figure-caption">图 4-3: 技能溢价的异质性分析</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- Section 5: Robustness Checks -->
+        <section class="mb-8 reveal">
+            <h2 class="text-2xl font-bold mb-6 border-l-4 border-blue-800 pl-4">5. 稳健性检验</h2>
+            <p class="mb-6 text-slate-700">
+                为了确保结论的科学性，我们进行了倾向得分匹配 (PSM) 和安慰剂检验。
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <figure class="flex flex-col">
+                    <img src="data/picture/boss倾向得分匹配效果验证.png" alt="倾向得分匹配效果验证" class="rounded shadow-sm border border-slate-200 hover:shadow-md transition duration-300">
+                    <figcaption class="figure-caption">图 5-1: 倾向得分匹配 (PSM) 效果验证</figcaption>
+                </figure>
+                <figure class="flex flex-col">
+                    <img src="data/picture/boss安慰剂测试稳健性检验.png" alt="安慰剂测试稳健性检验" class="rounded shadow-sm border border-slate-200 hover:shadow-md transition duration-300">
+                    <figcaption class="figure-caption">图 5-2: 安慰剂检验 (500次随机模拟)</figcaption>
+                </figure>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-8 mt-12">
+        <div class="max-w-4xl mx-auto px-6 text-center text-sm">
+            <p>&copy; 2025 Big Data Project. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>
