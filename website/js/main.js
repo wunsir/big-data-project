@@ -104,10 +104,15 @@ document.addEventListener('DOMContentLoaded', () => {
             constructor() {
                 this.x = Math.random() * width;
                 this.y = Math.random() * height;
-                this.vx = (Math.random() - 0.5) * 0.8; // Faster movement
-                this.vy = (Math.random() - 0.5) * 0.8;
-                this.size = Math.random() * 3 + 2; // Larger particles
-                this.color = `rgba(203, 213, 225, ${Math.random() * 0.5 + 0.3})`; // Brighter color (slate-300) & higher opacity
+                // Base velocity for wandering
+                this.baseVx = (Math.random() - 0.5) * 0.5; 
+                this.baseVy = (Math.random() - 0.5) * 0.5;
+                // Current velocity
+                this.vx = this.baseVx;
+                this.vy = this.baseVy;
+                
+                this.size = Math.random() * 3 + 2; 
+                this.color = `rgba(203, 213, 225, ${Math.random() * 0.5 + 0.3})`; 
             }
 
             update() {
@@ -115,8 +120,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.y += this.vy;
 
                 // Bounce off edges
-                if (this.x < 0 || this.x > width) this.vx *= -1;
-                if (this.y < 0 || this.y > height) this.vy *= -1;
+                if (this.x < 0 || this.x > width) {
+                    this.vx *= -1;
+                    this.baseVx *= -1; // Also reflect base velocity
+                }
+                if (this.y < 0 || this.y > height) {
+                    this.vy *= -1;
+                    this.baseVy *= -1;
+                }
 
                 // Mouse interaction
                 if (mouse.x != null) {
@@ -127,12 +138,21 @@ document.addEventListener('DOMContentLoaded', () => {
                         const forceDirectionX = dx / distance;
                         const forceDirectionY = dy / distance;
                         const force = (mouseDistance - distance) / mouseDistance;
-                        const directionX = forceDirectionX * force * 0.6;
-                        const directionY = forceDirectionY * force * 0.6;
-                        this.vx += directionX;
-                        this.vy += directionY;
+                        // Reduced force multiplier significantly (0.6 -> 0.05)
+                        const directionX = forceDirectionX * force * 0.05;
+                        const directionY = forceDirectionY * force * 0.05;
+                        
+                        // Push away (repulsion) instead of attraction for better feel? 
+                        // Or keep attraction but weaker. Let's keep attraction but weaker.
+                        this.vx -= directionX; // Changed to repulsion (-) to push particles away from mouse
+                        this.vy -= directionY;
                     }
                 }
+
+                // Friction / Return to base velocity
+                // Smoothly interpolate current velocity back to base velocity
+                this.vx += (this.baseVx - this.vx) * 0.05;
+                this.vy += (this.baseVy - this.vy) * 0.05;
             }
 
             draw() {
