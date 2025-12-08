@@ -1,10 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Roboto:wght@300;400;500;700&display=swap');
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #f8f9fa;
     color: #333;
     line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scroll from animations */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -12,52 +17,142 @@ h1, h2, h3, h4, h5, h6 {
     color: #1a202c;
 }
 
+/* --- Container Styles --- */
+
+/* Standard Container for Sub-pages (Macro/Micro) */
 .academic-container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 2rem;
+    width: 90%;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 3rem;
     background-color: white;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    border-radius: 8px;
+    position: relative;
+    z-index: 10;
+    min-height: 80vh;
 }
 
-.figure-caption {
-    font-family: 'Merriweather', serif;
-    font-style: italic;
-    color: #666;
+/* Special Container for Index Page (Parallax Cover Effect) */
+.index-content-layer {
+    position: relative;
+    z-index: 20; /* Higher than hero */
+    margin-top: 100vh; /* Push content below the full-screen hero */
+    background-color: #f8fafc; /* Light slate background */
+    width: 100%; /* Full width */
+    min-height: 100vh;
+    box-shadow: 0 -20px 50px rgba(0, 0, 0, 0.5); /* Strong shadow for depth */
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.index-inner-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* --- Hero Section Styles --- */
+.hero-bg {
+    position: fixed; /* Parallax effect: Fixed background */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1; /* Lowest level */
+    background: radial-gradient(ellipse at bottom, #0f172a 0%, #020617 100%); /* Deep dark blue/black */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#particle-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    opacity: 1; /* Increased opacity for clarity */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
     text-align: center;
-    margin-top: 0.5rem;
-    font-size: 0.9rem;
+    width: 100%;
 }
 
-.nav-link {
-    transition: color 0.2s;
+/* Glassmorphism Tag */
+.hero-tag {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #e2e8f0;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    transition: all 0.3s ease;
 }
 
-.nav-link:hover {
-    color: #90cdf4;
+.hero-tag:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
-.section-divider {
-    border-bottom: 1px solid #e2e8f0;
-    margin: 2rem 0;
+/* Scroll Indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    color: rgba(255, 255, 255, 0.5);
+    animation: bounce 2s infinite;
 }
 
-.highlight-box {
-    background-color: #f7fafc;
-    border-left: 4px solid #2b6cb0;
-    padding: 1rem;
-    margin: 1rem 0;
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0) translateX(-50%);}
+    40% {transform: translateY(-10px) translateX(-50%);}
+    60% {transform: translateY(-5px) translateX(-50%);}
+}
+
+/* Footer adjustment */
+footer {
+    position: relative;
+    z-index: 20;
+    background-color: #0f172a; /* Match hero dark theme */
 }
 
 /* --- Animations & Effects --- */
 
+/* Entrance Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards; /* Silky smooth bezier */
+}
+
+.delay-200 { animation-delay: 0.2s; }
+.delay-500 { animation-delay: 0.4s; }
+.delay-800 { animation-delay: 0.6s; }
+
 /* 1. Scroll Reveal Animation */
 .reveal {
     opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+    transform: translateY(50px);
+    transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1); /* Consistent silky smooth */
 }
 
 .reveal.active {
