@@ -2,17 +2,17 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Awesome-pyecharts</title>
+    <title>岗位-薪资等级桑基图</title>
                 <script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts.min.js"></script>
 
     
 </head>
 <body >
-    <div id="0b1b227204e04b4ba15603d2336622c2" class="chart-container" style="width:1000px; height:600px; "></div>
+    <div id="0246c289480447fcb35839c64482a2a8" class="chart-container" style="width:1000px; height:600px; "></div>
     <script>
-        var chart_0b1b227204e04b4ba15603d2336622c2 = echarts.init(
-            document.getElementById('0b1b227204e04b4ba15603d2336622c2'), 'white', {renderer: 'canvas', locale: 'ZH'});
-        var option_0b1b227204e04b4ba15603d2336622c2 = {
+        var chart_0246c289480447fcb35839c64482a2a8 = echarts.init(
+            document.getElementById('0246c289480447fcb35839c64482a2a8'), 'white', {renderer: 'canvas', locale: 'ZH'});
+        var option_0246c289480447fcb35839c64482a2a8 = {
     "backgroundColor": "white",
     "animation": true,
     "animationThreshold": 2000,
@@ -26,138 +26,156 @@
         "enabled": false
     },
     "color": [
-        "#5470c6",
-        "#91cc75",
-        "#fac858",
-        "#ee6666",
-        "#73c0de",
-        "#3ba272",
-        "#fc8452",
-        "#9a60b4",
-        "#ea7ccc"
+        "#80b1d3",
+        "#fdb462",
+        "#b3de69",
+        "#fb8072",
+        "#bc80bd"
     ],
     "series": [
         {
-            "type": "pie",
-            "colorBy": "data",
-            "legendHoverLink": true,
-            "selectedMode": false,
-            "selectedOffset": 10,
-            "clockwise": true,
-            "startAngle": 90,
-            "minAngle": 0,
-            "minShowLabelAngle": 0,
-            "avoidLabelOverlap": true,
-            "stillShowZeroSum": true,
-            "percentPrecision": 2,
-            "showEmptyCircle": true,
-            "emptyCircleStyle": {
-                "color": "lightgray",
-                "borderColor": "#000",
-                "borderWidth": 0,
-                "borderType": "solid",
-                "borderDashOffset": 0,
-                "borderCap": "butt",
-                "borderJoin": "bevel",
-                "borderMiterLimit": 10,
-                "opacity": 1
-            },
+            "type": "sankey",
             "data": [
                 {
-                    "name": "\u6295\u884c",
-                    "value": 42.7
+                    "name": "\u4ea7\u54c1"
                 },
                 {
-                    "name": "\u91cf\u5316",
-                    "value": 23.0
+                    "name": "\u4fdd\u9669"
                 },
                 {
-                    "name": "\u57fa\u91d1",
-                    "value": 22.5
+                    "name": "\u54a8\u8be2"
                 },
                 {
-                    "name": "\u4fdd\u9669",
-                    "value": 18.2
+                    "name": "\u5546\u4e1a/\u6570\u636e\u5206\u6790"
                 },
                 {
-                    "name": "\u4ea7\u54c1",
+                    "name": "\u57fa\u91d1"
+                },
+                {
+                    "name": "\u6295\u884c"
+                },
+                {
+                    "name": "\u8bc1\u5238"
+                },
+                {
+                    "name": "\u8d22\u52a1"
+                },
+                {
+                    "name": "\u8fd0\u8425"
+                },
+                {
+                    "name": "\u91cf\u5316"
+                },
+                {
+                    "name": "\u94f6\u884c"
+                },
+                {
+                    "name": "\u85aa\u8d44\u7b49\u7ea7: \u22648K"
+                },
+                {
+                    "name": "\u85aa\u8d44\u7b49\u7ea7: 8-12K"
+                },
+                {
+                    "name": "\u85aa\u8d44\u7b49\u7ea7: 12-18K"
+                },
+                {
+                    "name": "\u85aa\u8d44\u7b49\u7ea7: 18-25K"
+                },
+                {
+                    "name": "\u85aa\u8d44\u7b49\u7ea7: >25K"
+                }
+            ],
+            "links": [
+                {
+                    "source": "\u4ea7\u54c1",
+                    "target": "\u85aa\u8d44\u7b49\u7ea7: 12-18K",
                     "value": 16.9
                 },
                 {
-                    "name": "\u54a8\u8be2",
+                    "source": "\u4fdd\u9669",
+                    "target": "\u85aa\u8d44\u7b49\u7ea7: 18-25K",
+                    "value": 18.2
+                },
+                {
+                    "source": "\u54a8\u8be2",
+                    "target": "\u85aa\u8d44\u7b49\u7ea7: 12-18K",
                     "value": 16.5
                 },
                 {
-                    "name": "\u5546\u4e1a/\u6570\u636e\u5206\u6790",
+                    "source": "\u5546\u4e1a/\u6570\u636e\u5206\u6790",
+                    "target": "\u85aa\u8d44\u7b49\u7ea7: 12-18K",
                     "value": 16.1
                 },
                 {
-                    "name": "\u8bc1\u5238",
+                    "source": "\u57fa\u91d1",
+                    "target": "\u85aa\u8d44\u7b49\u7ea7: 18-25K",
+                    "value": 22.5
+                },
+                {
+                    "source": "\u6295\u884c",
+                    "target": "\u85aa\u8d44\u7b49\u7ea7: >25K",
+                    "value": 42.7
+                },
+                {
+                    "source": "\u8bc1\u5238",
+                    "target": "\u85aa\u8d44\u7b49\u7ea7: 12-18K",
                     "value": 15.9
                 },
                 {
-                    "name": "\u8d22\u52a1",
+                    "source": "\u8d22\u52a1",
+                    "target": "\u85aa\u8d44\u7b49\u7ea7: 12-18K",
                     "value": 14.8
                 },
                 {
-                    "name": "\u94f6\u884c",
-                    "value": 13.6
+                    "source": "\u8fd0\u8425",
+                    "target": "\u85aa\u8d44\u7b49\u7ea7: 12-18K",
+                    "value": 13.3
                 },
                 {
-                    "name": "\u8fd0\u8425",
-                    "value": 13.3
+                    "source": "\u91cf\u5316",
+                    "target": "\u85aa\u8d44\u7b49\u7ea7: 18-25K",
+                    "value": 23.0
+                },
+                {
+                    "source": "\u94f6\u884c",
+                    "target": "\u85aa\u8d44\u7b49\u7ea7: 12-18K",
+                    "value": 13.6
                 }
             ],
-            "radius": [
-                "20%",
-                "75%"
-            ],
-            "center": [
-                "50%",
-                "50%"
-            ],
-            "roseType": "radius",
+            "left": "5%",
+            "top": "5%",
+            "right": "20%",
+            "bottom": "5%",
+            "nodeWidth": 20,
+            "nodeGap": 8,
+            "nodeAlign": "justify",
+            "orient": "horizontal",
+            "draggable": true,
             "label": {
                 "show": true,
+                "color": "#374151",
                 "margin": 8,
-                "formatter": "{b}: {c}K",
+                "fontSize": 12,
                 "valueAnimation": false
             },
-            "labelLine": {
+            "lineStyle": {
                 "show": true,
-                "showAbove": false,
-                "length": 15,
-                "length2": 15,
-                "smooth": false,
-                "minTurnAngle": 90,
-                "maxSurfaceAngle": 90
+                "width": 1,
+                "opacity": 0.6,
+                "curveness": 0.45,
+                "type": "solid",
+                "color": "source"
             },
             "itemStyle": {
-                "borderColor": "#fff",
+                "borderColor": "#ddd",
                 "borderWidth": 1
-            },
-            "rippleEffect": {
-                "show": true,
-                "brushType": "stroke",
-                "scale": 2.5,
-                "period": 4
             }
         }
     ],
     "legend": [
         {
             "data": [
-                "\u6295\u884c",
-                "\u91cf\u5316",
-                "\u57fa\u91d1",
-                "\u4fdd\u9669",
-                "\u4ea7\u54c1",
-                "\u54a8\u8be2",
-                "\u5546\u4e1a/\u6570\u636e\u5206\u6790",
-                "\u8bc1\u5238",
-                "\u8d22\u52a1",
-                "\u94f6\u884c",
-                "\u8fd0\u8425"
+                ""
             ],
             "selected": {},
             "show": false,
@@ -196,6 +214,7 @@
         "confine": false,
         "appendToBody": false,
         "transitionDuration": 0.4,
+        "formatter": "{a} \u279d {b}",
         "textStyle": {
             "fontSize": 14
         },
@@ -206,11 +225,16 @@
     "title": [
         {
             "show": true,
-            "text": "\u5546\u79d1\u5404\u7ec6\u5206\u9886\u57df\u85aa\u8d44\u7ade\u4e89\u529b (\u73ab\u7470\u56fe)",
+            "text": "\u5546\u79d1\u7ec6\u5206\u5c97\u4f4d \u2192 \u85aa\u8d44\u7b49\u7ea7\u6d41\u5411 (\u6851\u57fa\u56fe)",
             "target": "blank",
             "subtarget": "blank",
             "left": "center",
-            "padding": 5,
+            "padding": [
+                8,
+                0,
+                0,
+                0
+            ],
             "itemGap": 10,
             "textAlign": "auto",
             "textVerticalAlign": "auto",
@@ -218,7 +242,7 @@
         }
     ]
 };
-        chart_0b1b227204e04b4ba15603d2336622c2.setOption(option_0b1b227204e04b4ba15603d2336622c2);
+        chart_0246c289480447fcb35839c64482a2a8.setOption(option_0246c289480447fcb35839c64482a2a8);
     </script>
 </body>
 </html>
