@@ -37,6 +37,12 @@
                 我们利用自然语言处理技术对职位描述（JD）进行深度解析。通过接入阿里通义千问 API (Qwen-Plus)，我们成功剔除了行政废话，提取了真正决定薪资的“硬技能”。
             </p>
             
+            <!-- Interactive Diamond Chart -->
+            <div class="w-full h-[600px] mb-4 rounded shadow-lg overflow-hidden border border-slate-200">
+                <iframe src="data/diamond_chart_fixed.html" class="w-full h-full border-0"></iframe>
+            </div>
+            <p class="text-center text-sm text-slate-500 mb-8">图 1-0: 交互式技能词云/钻石图 (BOSS直聘数据)</p>
+
             <div class="grid md:grid-cols-3 gap-6 mb-8">
                 <figure class="flex flex-col">
                     <img src="data/picture/boss岗位技能词云与统计.png" alt="岗位技能词云" class="rounded shadow-sm border border-slate-200 hover:shadow-md transition duration-300">
@@ -59,6 +65,12 @@
             <p class="mb-6 text-slate-700">
                 通过相关性热力图和特征重要性排序，我们探究了学历、经验、技能相似度等因素对薪资的影响权重。
             </p>
+
+            <!-- Interactive Sankey Chart -->
+            <div class="w-full h-[600px] mb-4 rounded shadow-lg overflow-hidden border border-slate-200">
+                <iframe src="data/sankey_chart.html" class="w-full h-full border-0"></iframe>
+            </div>
+            <p class="text-center text-sm text-slate-500 mb-8">图 2-0: 交互式薪资流向桑基图 (BOSS直聘数据)</p>
 
             <div class="grid md:grid-cols-2 gap-8 mb-8">
                 <figure class="flex flex-col">
@@ -89,6 +101,18 @@
                 本研究的核心发现：职位描述（JD）与高薪原型的相似度越高，其提供的薪资溢价越显著。这验证了劳动力市场对特定技能组合的高回报。
             </p>
             
+            <!-- Interactive Scatter Regression -->
+            <div class="w-full h-[600px] mb-4 rounded shadow-lg overflow-hidden border border-slate-200">
+                <iframe src="data/scatter_regression.html" class="w-full h-full border-0"></iframe>
+            </div>
+            <p class="text-center text-sm text-slate-500 mb-8">图 3-0: 交互式技能溢价回归散点图 (BOSS直聘数据)</p>
+
+            <!-- Interactive Radar Profile -->
+            <div class="w-full h-[600px] mb-4 rounded shadow-lg overflow-hidden border border-slate-200">
+                <iframe src="data/radar_profile.html" class="w-full h-full border-0"></iframe>
+            </div>
+            <p class="text-center text-sm text-slate-500 mb-8">图 3-0.5: 交互式高低薪人才画像雷达图 (BOSS直聘数据)</p>
+
             <div class="grid md:grid-cols-2 gap-8 mb-8">
                 <figure class="flex flex-col">
                     <img src="data/picture/boss相似度分布直方图.png" alt="相似度分布直方图" class="rounded shadow-sm border border-slate-200 hover:shadow-md transition duration-300">
@@ -117,6 +141,12 @@
             <p class="mb-6 text-slate-700">
                 我们进一步探讨了技能溢价在不同学历、城市等级等维度上的差异。
             </p>
+
+            <!-- Interactive Map -->
+            <div class="w-full h-[600px] mb-4 rounded shadow-lg overflow-hidden border border-slate-200">
+                <iframe src="data/boss城市薪资地图.html" class="w-full h-full border-0"></iframe>
+            </div>
+            <p class="text-center text-sm text-slate-500 mb-8">图 4-0: 交互式城市薪资地图 (BOSS直聘数据)</p>
 
             <div class="grid md:grid-cols-3 gap-6 mb-8">
                 <figure class="flex flex-col">
