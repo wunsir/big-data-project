@@ -18,8 +18,18 @@
                 <a href="macro.html" class="nav-link text-blue-300 border-b-2 border-blue-300 pb-1">宏观分布分析</a>
                 <a href="micro.html" class="nav-link text-gray-300 hover:text-white">微观技能溢价</a>
             </div>
-            <div class="md:hidden text-gray-300">
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-gray-300 focus:outline-none">
                 <span class="text-xs">Menu &darr;</span>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-800 border-t border-slate-700 absolute w-full left-0 top-full shadow-xl">
+            <div class="px-6 py-4 space-y-3 flex flex-col">
+                <a href="index.html" class="block text-gray-300 hover:text-white hover:bg-slate-700 px-3 py-2 rounded transition">项目概览</a>
+                <a href="macro.html" class="block text-blue-300 bg-slate-700 px-3 py-2 rounded transition">宏观分布分析</a>
+                <a href="micro.html" class="block text-gray-300 hover:text-white hover:bg-slate-700 px-3 py-2 rounded transition">微观技能溢价</a>
             </div>
         </div>
     </nav>
